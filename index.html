@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8" />
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            #row1, #row2 {
+                display:inline;
+                font-family:monospace,monospace;
+            }
+        </style>
+    </head>
+    <body>
+    </body>
+    <script>
+        var themap = {
+                    "row1":"hello",
+                    "row2":"world"
+                };
+        var charmap = {
+                    "h":"red",
+                    "e":"blue",
+                    "l":"green",
+                    "o":"yellow",
+                    "w":"purple",
+                    "r":"grey",
+                    "d":"black"
+                };
+        for (row in themap) {
+                    var therow = themap[row];
+                    var divrow = $('<div id='+row+'>');
+                    var divline = "";
+                    for (var i = 0; i < therow.length; i++) {
+                                var theletter = therow[i];
+                                divline += '<div style="display:inline;color:'+charmap[theletter]+'">'+theletter+'</div>';
+                            };
+                    console.log(divline);
+                    $(divrow).append(divline);
+                    $('body').append(divrow).append("<br>");
+        };
+    </script>
+</html>
+
