@@ -18,13 +18,13 @@
                     "row2":"world"
                 };
         var charmap = {
-                    "h":"red",
-                    "e":"blue",
-                    "l":"green",
-                    "o":"yellow",
-                    "w":"purple",
-                    "r":"grey",
-                    "d":"black"
+                    "h":{"color":"red"},
+                    "e":{"color":"blue"},
+                    "l":{"color":"green"},
+                    "o":{"color":"yellow"},
+                    "w":{"color":"purple"},
+                    "r":{"color":"grey"},
+                    "d":{"color":"black"}
                 };
         for (row in themap) {
                     var therow = themap[row];
@@ -32,7 +32,7 @@
                     var divline = "";
                     for (var i = 0; i < therow.length; i++) {
                                 var theletter = therow[i];
-                                divline += '<div style="display:inline;color:'+charmap[theletter]+'">'+theletter+'</div>';
+                                divline += '<div style="display:inline;color:'+charmap[theletter]['color']+'">'+theletter+'</div>';
                             };
                     console.log(divline);
                     $(divrow).append(divline);
